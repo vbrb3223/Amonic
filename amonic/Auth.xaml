@@ -1,0 +1,35 @@
+﻿<Page x:Class="amonic.Auth"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:amonic"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="800"
+      Title="Auth" Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="130"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Image x:Name="image" Grid.Row="1" Grid.ColumnSpan="4" Source="pack://application:,,,/Resources/DS2017_TP09_color@4x.png"/>
+        <TextBox x:Name="TName" Grid.Column="1" VerticalContentAlignment="Center" Grid.Row="3" Grid.ColumnSpan="2" VerticalAlignment="Top" Text="" Height="25" FontFamily="/amonic;component/fonts/#TeX Gyre Adventor"/>
+        <PasswordBox x:Name="TPass" Grid.Column="1" VerticalContentAlignment="Center" Grid.Row="4" Grid.ColumnSpan="2" VerticalAlignment="Top" Height="25" FontFamily="/amonic;component/fonts/#TeX Gyre Adventor"/>
+        <Button x:Name="BtnLogin" Content="Login" Grid.Column="1" Grid.Row="5" Height="25" VerticalAlignment="Center" Width="120" Click="BtnLogin_Click" Background="#FFF7941F" FontFamily="/amonic;component/fonts/#TeX Gyre Adventor"/>
+        <Button x:Name="BtnExit" Content="Exit" Grid.Column="2" Grid.Row="5" Height="25" VerticalAlignment="Center" Width="120" Click="BtnExit_Click" Background="#FFF7941F" FontFamily="/amonic;component/fonts/#TeX Gyre Adventor"/>
+        <Label x:Name="label" Content="Username: " HorizontalAlignment="Right" Grid.Row="3" VerticalAlignment="Top" FontFamily="/amonic;component/fonts/#TeX Gyre Adventor"/>
+        <Label x:Name="label1" Content="Password: " HorizontalAlignment="Right" Grid.Row="4" VerticalAlignment="Top" FontFamily="/amonic;component/fonts/#TeX Gyre Adventor"/>
+        <CheckBox x:Name="remember" Content="Remember me" Grid.Column="1" Margin="0,0,0,0" Grid.Row="4" Grid.ColumnSpan="2" Width="110" Grid.RowSpan="2" Height="23" FontFamily="/amonic;component/fonts/#TeX Gyre Adventor"/>
+    </Grid>
+</Page>

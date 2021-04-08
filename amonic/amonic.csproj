@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C38FD448-B9BE-452A-9AD7-85C68E37C6D0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>amonic</RootNamespace>
+    <AssemblyName>amonic</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="ActivityToColorConverter.cs" />
+    <Compile Include="Admin\AddUser.xaml.cs">
+      <DependentUpon>AddUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Admin.xaml.cs">
+      <DependentUpon>Admin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EditRole.xaml.cs">
+      <DependentUpon>EditRole.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Amonic.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Amonic.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Amonic.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Amonic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Amonic.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Amonic.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ColorFlight.cs" />
+    <Compile Include="ColorUser.cs" />
+    <Compile Include="NavigationClass.cs" />
+    <Compile Include="RoleToColorConverter.cs" />
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>Amonic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UsersPages\AddPassengers.xaml.cs">
+      <DependentUpon>AddPassengers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UsersPages\Confirmation.xaml.cs">
+      <DependentUpon>Confirmation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UsersPages\EditFlightsPage.xaml.cs">
+      <DependentUpon>EditFlightsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UsersPages\Flight.xaml.cs">
+      <DependentUpon>Flight.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UsersPages\ImportPage.xaml.cs">
+      <DependentUpon>ImportPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UsersPages\SearchForFlights.xaml.cs">
+      <DependentUpon>SearchForFlights.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UsersPages\Users.xaml.cs">
+      <DependentUpon>Users.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Аэропорты.cs">
+      <DependentUpon>Amonic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Билеты.cs">
+      <DependentUpon>Amonic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Информация_о_пользователе.cs">
+      <DependentUpon>Amonic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Офисы.cs">
+      <DependentUpon>Amonic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Оформление_билетов.cs">
+      <DependentUpon>Amonic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Пассажиры.cs">
+      <DependentUpon>Amonic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Попытки_входа.cs">
+      <DependentUpon>Amonic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Рейсы.cs">
+      <DependentUpon>Amonic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Самолеты.cs">
+      <DependentUpon>Amonic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Страны.cs">
+      <DependentUpon>Amonic.tt</DependentUpon>
+    </Compile>
+    <Page Include="Admin\AddUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Admin\Admin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Auth.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Admin\EditRole.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Auth.xaml.cs">
+      <DependentUpon>Auth.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="UsersPages\AddPassengers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UsersPages\Confirmation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UsersPages\EditFlightsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UsersPages\Flight.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UsersPages\ImportPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UsersPages\SearchForFlights.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UsersPages\Users.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Resource Include="fonts\tex-gyre-adventor_[allfont.ru].ttf" />
+    <EntityDeploy Include="Amonic.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Amonic.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Amonic.edmx.diagram">
+      <DependentUpon>Amonic.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DS2017_TP09_color%404x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Amonic.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Amonic.edmx</DependentUpon>
+      <LastGenOutput>Amonic.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Amonic.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Amonic.edmx</DependentUpon>
+      <LastGenOutput>Amonic.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

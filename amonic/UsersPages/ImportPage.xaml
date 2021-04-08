@@ -1,0 +1,54 @@
+﻿<Page x:Class="amonic.UsersPages.ImportPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:amonic.UsersPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ImportPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="69*"/>
+            <RowDefinition Height="58*"/>
+            <RowDefinition Height="38*"/>
+            <RowDefinition Height="256*"/>
+            <RowDefinition Height="28*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="38*"/>
+            <ColumnDefinition Width="500*"/>
+            <ColumnDefinition Width="45"/>
+            <ColumnDefinition Width="179*"/>
+            <ColumnDefinition Width="38*"/>
+        </Grid.ColumnDefinitions>
+        <GroupBox x:Name="groupBox" BorderBrush="Gray" BorderThickness="1" Header="Results" ToolTip="Results" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2"  FontFamily="/amonic;component/fonts/#TeX Gyre Adventor">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="317*"/>
+                    <ColumnDefinition Width="395*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40*"/>
+                    <RowDefinition Height="60*"/>
+                    <RowDefinition Height="60*"/>
+                    <RowDefinition Height="60*"/>
+                </Grid.RowDefinitions>
+                <Label Content="Successful Changes Applied:" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="1"/>
+                <Label Content="Duplicate Records Discarded:" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2"/>
+                <Label Content="Record With missing fields discarded:" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="3"/>
+                <Label Name="SuccessLabel" Content="[ xxxx ]" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="1"/>
+                <Label Name="DuplicateLabel" Content="[ xxxx ]" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Row="2" Grid.Column="1"/>
+                <Label Name="MissingLabel" Content="[ xxxx ]" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Row="3" Grid.Column="1"/>
+                <Label x:Name="label1" Content="Skipped records with invalid data:" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Label x:Name="SkippedRecords" Content="[ xxxx ]" HorizontalAlignment="Left" Grid.Column="1" VerticalAlignment="Center"/>
+            </Grid>
+        </GroupBox>
+        <Label x:Name="label" Content="Please select the text file with the changes" Grid.Column="1" VerticalAlignment="Bottom"  FontFamily="/amonic;component/fonts/#TeX Gyre Adventor"/>
+        <TextBox x:Name="FilePath" Grid.Row="1" Grid.Column="1" Height="30"/>
+        <Button Content="🡹 Import" Grid.Column="3" Grid.Row="1" Height="30" Width="120" Click="Button_Click" Background="#FFF7941F" FontFamily="/amonic;component/fonts/#TeX Gyre Adventor"/>
+        <Button x:Name="Exit" Content="Exit" Grid.Column="3" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="100" Click="Exit_Click" Background="#FFF7941F" FontFamily="/amonic;component/fonts/#TeX Gyre Adventor"/>
+        <Button x:Name="OpenFileBTN" Content="✎" Grid.Column="2" Grid.Row="1" Height="30" Width="25" RenderTransformOrigin="0.504,0.5" Click="OpenFileBTN_Click" Background="#FFF7941F" FontFamily="/amonic;component/fonts/#TeX Gyre Adventor"/>
+    </Grid>
+</Page>
